@@ -1,0 +1,125 @@
+{% extends 'index.html' %}{% load static %} {% block slider %}
+
+<style>
+    .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
+    }
+    
+    .dve {
+        width: 50%
+    }
+    
+    @media screen and (max-width:768px) {
+        .dve {
+            width: 100%
+        }
+        .swiper-slide {
+            width: 100%
+        }
+        p {
+            font-size: 15px
+        }
+    }
+    
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+    
+    body {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+</style>
+
+<div style="margin: 2rem!important;" class="m-5">
+
+    <h1 style="text-transform: capitalize;font-family: 'Anonymous Pro';" id="nom">{{product.nom}}</h1>
+
+    <div class="swiper-container mySwiper">
+        <div class="swiper-wrapper">
+            <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
+
+                <img class="dve" src="{{product.thumbnail.url}}" alt="{{slideshow.text}}"> </div>
+            {% if product.image1 %}
+            <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
+                <img class="dve" src="{{product.image1.url}}" alt="{{slideshow.text}}"> </div>{% else %} {% endif %} {% if product.image2 %}
+            <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
+                <img class="dve" src="{{product.image2.url}}" alt="{{slideshow.text}}"> </div>{% else %}{% endif %} {% if product.image3 %}
+            <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
+                <img class="dve" src="{{product.image3.url}}" alt="{{slideshow.text}}"> </div>{% else %}{% endif %}
+        </div>
+    </div>
+    <br><br>
+    {% if product.audio %}
+    <audio style="width: 100%;" controls>
+        <source src="{{product.audio.url}}" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    {% else %}
+
+    {% endif %}
+    <h3 style="font-variant-caps: petite-caps;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" id="detail">Description:</h3>
+    <p id="Description" style="text-align: justify;font-family:'Alef'">{{product.description}}</p>
+
+</div>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>{% endblock %}
