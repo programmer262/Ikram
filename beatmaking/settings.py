@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chat',
     'Home',
+    'django_summernote'
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -69,8 +70,14 @@ TEMPLATES = [
         },
     },
 ]
-
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    'localhost',
+]
 WSGI_APPLICATION = 'beatmaking.wsgi.application'
+
+
 
 
 # Database
@@ -82,8 +89,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
+CACHES={
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': '/var/tmp/django_cache', 
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -135,3 +146,4 @@ MEDIA_URL = '/files/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/files')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+X_FRAME_OPTIONS ='SAMEORIGIN'

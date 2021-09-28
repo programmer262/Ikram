@@ -79,9 +79,9 @@
             <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
 
                 <img class="dve" src="{{product.thumbnail.url}}" alt="{{slideshow.text}}"> </div>
-            {% if product.image1 %}
+            {% if product.thumbnail1 %}
             <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
-                <img class="dve" src="{{product.image1.url}}" alt="{{slideshow.text}}"> </div>{% else %} {% endif %} {% if product.image2 %}
+                <img class="dve" src="{{product.thumbnail1.url}}" alt="{{slideshow.text}}"> </div>{% else %} {% endif %} {% if product.image2 %}
             <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
                 <img class="dve" src="{{product.image2.url}}" alt="{{slideshow.text}}"> </div>{% else %}{% endif %} {% if product.image3 %}
             <div width="80%" style="display: flex; align-items: center;justify-content: center;" class="swiper-slide">
@@ -98,7 +98,7 @@
 
     {% endif %}
     <h3 style="font-variant-caps: petite-caps;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" id="detail">Description:</h3>
-    <p id="Description" style="text-align: justify;font-family:'Alef'">{{product.description}}</p>
+    <p id="Description" style="text-align: justify;font-family:'Alef'">{{product.description|safe}}</p>
 
 </div>
 <!-- Swiper JS -->
@@ -109,7 +109,6 @@
     var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
-        centeredSlides: true,
         slidesPerView: "auto",
         coverflowEffect: {
             rotate: 50,

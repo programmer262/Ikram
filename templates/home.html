@@ -1,0 +1,124 @@
+{% extends "index.html" %}
+{% load static %}
+{%block slider%} 
+
+    <!-- Demo styles -->
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 600px;
+      }
+
+      .swiper-slide {
+
+        text-align: center;
+        font-size: 18px;
+        z-index: 1;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background: round;
+    background-clip: border-box;
+    background-blend-mode: multiply;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .Text-of-slider{
+
+        z-index: 99;
+    background: black;
+    padding: 1%;
+    background-blend-mode: multiply;
+    border: ridge;
+    /* mix-blend-mode: multiply; */
+    color: white;
+
+      }
+    </style>
+
+    <!-- Swiper -->
+    <div style="margin-bottom: 10px;" class="swiper mySwiper">
+      <div class="swiper-wrapper">{% for slider in sliders %}
+
+        <div style="background-image: url({{slider.image.url}});filter: blur(100);background-position: center;
+        background-repeat: no-repeat;" class="swiper-slide">
+            <div style="z-index:99" class="Text-of-slider">{{slider.name|safe}}<br>
+            {{slider.description|safe}}</div>
+        </div>{% endfor %}
+
+      </div>
+      <div style="color: rgb(255, 255, 255);" class="swiper-button-next"></div>
+      <div style="color: rgb(255, 255, 255);" class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  
+<style>
+    .Dve{
+        background: linear-gradient( to right, #583232, #ff6b08);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    }
+</style>
+
+ {% for home in homes %}
+
+ {{home.mqs|safe}}
+
+ {% endfor %}   <div class="container">   <div class="row">
+  {% for service in services %}
+  <div style="margin-bottom: 3px;" class="col-md-4">
+  
+  <div class="card h-100">
+    {% if service.thumbnail %}
+      
+    <img src="{{service.thumbnail.url}}" class="card-img-top" alt="...">
+    {% else %}
+    {% endif %}
+  
+    <div class="card-body">
+      <h5 class="card-title">{{service.Type}}</h5>
+     <a href="{% url 'service' service.id %}"> <button class="btn btn-primary">View details</button></a>
+    </div>
+
+  </div></div>{% endfor %}
+  
+  </div></div> 
+ {% endblock slider %}

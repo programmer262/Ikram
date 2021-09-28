@@ -1,0 +1,80 @@
+{% extends 'index.html' %}{% load static %}{% block content %}
+
+<style>
+    #contact {
+        border-bottom: solid black;
+        border-bottom-width: .5px;
+    }
+    
+    @media screen and (max-width:991px) {
+        #contact {
+            border-bottom: none;
+        }
+    }
+    
+  
+    
+
+    
+    p {
+        font-size: 1.7vw
+    }
+    
+    h3 {
+        text-align: center;
+    }
+
+    
+    @media screen and (max-width: 768px) {
+        .true {
+            flex-direction: column;
+        }
+        .true>.elment {
+            width: 100%;
+            text-align: center;
+        }
+        p {
+            font-size: 20px
+        }
+        .true>.box-elemnt {
+            width: 100%;
+        }
+    }
+    input{
+        width: 100%;
+        border: 1px solid black;
+        padding: 10px;
+        color: rgb(2, 129, 66);
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+    textarea{
+        width: 100%;
+        border: 1px solid black;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        padding: 10px;
+
+    }
+    #id_First_name{
+
+    }
+</style>
+
+    <div style="margin-bottom: 10px;" class="box-elemnt">
+
+        <h2 style=" font-family: 'Bowlby One SC';">Send us a message:</h2>
+        <form style="display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;" action="" method="post">
+            {% csrf_token %} {{form}}
+            <input class="btn btn-primary" type="submit" value="Envoyez">
+        </form>
+    </div>
+
+
+    {% endblock %}

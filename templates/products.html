@@ -5,7 +5,16 @@
         border-bottom: solid black;
         border-bottom-width: .5px;
     }
-    
+    #gallery{
+        text-decoration: none;
+text-align: center;    }
+    .gallery:hover{
+        color: #0d6efd;
+    }
+    .gallery{
+        text-decoration: none;
+        color: rgba(0,0,0,.55);
+    }
     @media screen and (min-width:769px) {
         #product-card {
             height: 340.02px;
@@ -23,18 +32,18 @@
     <div class="row">
         <div class="col-md-3">
 
-            <div class="card">
+            <div style="font-family: Audiowide;" class="card">
                 <div style="background: white;text-align: center;font-family: 'Bangers';" class="card-header">
                     Categories
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <a style="font-family: 'Bangers';" id="gallery" href="{% url 'home' %}">All</a>
+                        <a style="font-family: 'Bangers';" id="gallery" href="{% url 'products' %}">All</a>
                     </li>
                     {% for type in types  %}
                       
                     <li class="list-group-item">
-                        <a style="font-family: 'Bangers';" class="gallery" href="{% url 'home' %}?type={{type.name}}">
+                        <a style="font-family: 'Bangers';" class="gallery" href="{% url 'products' %}?type={{type.name}}">
                                 {{type.name}}
                             </a>
                     </li>
@@ -55,7 +64,6 @@
       <img src="{{product.thumbnail.url}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">{{product.description}}</p>
        <a href="{% url 'product' product.id %}"> <button class="btn btn-primary">View details</button></a>
       </div>
       <div class="card-footer">

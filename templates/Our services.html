@@ -1,0 +1,26 @@
+{% extends "index.html" %}{% load static %} {% block content %}
+<style>
+  
+</style>
+        <div class="row">
+{% for service in services %}
+<div style="margin-bottom: 3px;" class="col-md-4">
+
+<div class="card h-100">
+  {% if service.thumbnail %}
+    
+  <img src="{{service.thumbnail.url}}" class="card-img-top" alt="...">
+  {% else %}
+  {% endif %}
+
+  <div class="card-body">
+    <h5 class="card-title">{{service.Type}}</h5>
+   <a href="{% url 'service' service.id %}"> <button class="btn btn-primary">View details</button></a>
+  </div>
+  <div class="card-footer">
+    <small class="text-muted">Published at: {{service.posted}}</small>
+  </div>
+</div></div>{% endfor %}
+
+</div>
+{% endblock content %}

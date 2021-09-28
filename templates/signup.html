@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadija Oum Elmouminine</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        #form {
+            background: linear-gradient(50deg, black, whitesmoke);
+            color: aliceblue;
+            padding: 20px;
+        }
+        
+        input {
+            white-space: pre-line;
+            text-align: center;
+            border: none;
+            width: 100%;
+        }
+        
+        #submit {
+            background: linear-gradient(50deg, rgb(12, 185, 142), aliceblue);
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        label:before {
+            content: "\a";
+            white-space: pre;
+        }
+        
+        a:before {
+            content: "\a";
+            white-space: pre;
+        }
+        
+        label {
+            letter-spacing: 5px;
+            clear: left;
+        }
+        
+        #signup {
+            color: red;
+            text-decoration: none;
+            text-align: center;
+            border-color: red;
+        }
+        
+        #mail {
+            color: orangered;
+            text-align: center;
+        }
+        
+        #phone {
+            color: orangered;
+            text-align: center;
+        }
+        
+        #id_password,
+        #id_username {
+            margin-bottom: 10px;
+            height: 25px;
+        }
+        
+        button {
+            color: blanchedalmond;
+            font-size: 25px;
+            background: black;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: darkgray;
+            z-index: 99;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <h1>Signup</h1>
+        <form method="POST">
+            {% csrf_token %} {{ form }}
+            <input id="submit" value="submit" type="submit">
+        </form>
+        <a href="../login">
+            <button>
+                    <i class="material-icons">&#xe853;</i>
+                    Already have an account?
+                </button>
+        </a>
+    </div>
+</body>
+
+</html>
