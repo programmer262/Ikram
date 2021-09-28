@@ -2,25 +2,25 @@
 {% load static %}
 <html>
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Beth Ellen' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Quantico' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Pattaya' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Piedra' rel='stylesheet'>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet'>
-  <script src="https://kit.fontawesome.com/42e1fca473.js" crossorigin="anonymous"></script>
-  <link href='https://fonts.googleapis.com/css?family=Sedgwick Ave Display' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Beth Ellen' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Quantico' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Pattaya' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Piedra' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet'>
+<script src="https://kit.fontawesome.com/42e1fca473.js" crossorigin="anonymous"></script>
+<link href='https://fonts.googleapis.com/css?family=Sedgwick Ave Display' rel='stylesheet'>
 <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <title>Developers United</title>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
   <style>
     svg{
       width:25px;
@@ -77,7 +77,11 @@
                   <li class="nav-link" class="nav-item">
                     <div class="dropdown">
                         <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
- <center><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="inbox" class="svg-inline--fa fa-inbox" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M447 56.25C443.5 42 430.7 31.1 416 31.1H96c-14.69 0-27.47 10-31.03 24.25L3.715 304.9C1.247 314.9 0 325.2 0 335.5v96.47c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-96.47c0-10.32-1.247-20.6-3.715-30.61L447 56.25zM352 352H160L128 288H72.97L121 96h270l48.03 192H384L352 352z"></path></svg></center>  Contact us
+ <center>
+   <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="inbox" class="svg-inline--fa fa-inbox" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M447 56.25C443.5 42 430.7 31.1 416 31.1H96c-14.69 0-27.47 10-31.03 24.25L3.715 304.9C1.247 314.9 0 325.2 0 335.5v96.47c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-96.47c0-10.32-1.247-20.6-3.715-30.61L447 56.25zM352 352H160L128 288H72.97L121 96h270l48.03 192H384L352 352z"></path>
+  </svg>
+</center>  Contact us
   </a>
                         <ul style="font-family:Play;" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li> <a class="dropdown-item" href="{% url 'contact' %}">Contact Form</a></li>
