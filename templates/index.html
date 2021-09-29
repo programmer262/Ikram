@@ -90,19 +90,12 @@
                             <li> <a class="dropdown-item" href="#">Meet us</a></li>
                         </ul>
                     </div>
-                </li>
-  </div>
-
-
-
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.fiverr.com/developersunite?up_rollout=true">Our Gigs</a>
-            </li>
-
+                  </li>
+              </div>
             </ul>
             {% if user.is_authenticated %}
               <a class="nav-link" href="{% url 'tasks' %}">Tasks</a>
+              <a class="nav-link" href="{% url 'chat' %}">chat</a>
             <a href="../accounts/logout">
               <button class="btn btn-outline-primary my-2 my-sm-0">logout</button>
           </a>
