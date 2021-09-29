@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Developers United</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "index.html" %}
+{% load static %}
+{%block slider%} 
 <style>
-body {
-    margin: 0 auto;
+#problem{
+  display:none
+}
+#chat{
+  margin: 0 auto;
     padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +15,6 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
 .container {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
@@ -33,7 +33,9 @@ body {
   clear: both;
   display: table;
 }
-
+body{
+  margin:0
+}
 .container img {
   float: left;
   max-width: 60px;
@@ -58,8 +60,6 @@ body {
   color: #999;
 }
 </style>
-</head>
-<body>
 
 <div align="center">
     <h2 style="background: linear-gradient( to right, #583232, #ff6b08);
@@ -70,6 +70,7 @@ body {
 
 <div class="container">
     <style>
+      
     input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -109,7 +110,4 @@ body {
 </div>
 
 
-</body>
-
-
-</html>
+{% endblock slider %}

@@ -92,30 +92,25 @@
                     </div>
                 </li>
   </div>
-
-
-
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://www.fiverr.com/developersunite?up_rollout=true">Our Gigs</a>
-            </li>
-
             </ul>
             {% if user.is_authenticated %}
               <a class="nav-link" href="{% url 'tasks' %}">Tasks</a>
+              <a class="nav-link" href="{% url 'home' %}">chat</a>
+
             <a href="../accounts/logout">
               <button class="btn btn-outline-primary my-2 my-sm-0">logout</button>
           </a>
+
           {% else %}           <a href="../accounts/login">
             <button class="btn btn-outline-success my-2 my-sm-0">login</button>
         </a>{% endif %}
           </div>
         </div>
-      </nav>       <div class="slider" style="margin-top: 10px;margin-bottom:     4px;">
+      </nav>       <div id="chat" class="slider" style="margin-top: 10px;margin-bottom:     4px;">
         {% block slider %}
         {% endblock slider %} 
      </div>
-      <div class="container" style="margin-top: 10px;margin-bottom:     4px;">
+      <div id="problem" class="container" style="margin-top: 10px;margin-bottom:     4px;">
         {% block content %}
         {% endblock content %}  </div>
 <div class="slider">
