@@ -106,9 +106,10 @@
  
  <div class="container">  
    <center><h1 style="font-family: Play;">Our services</h1></center> <div class="row">
+     
   {% for service in services %}
+
   <div style="margin-bottom: 3px;" class="col-md-4">
-  
   <div class="card h-100">
     {% if service.thumbnail %}
       
@@ -127,10 +128,11 @@
   </h1></center>
   
   <div class="row">    
+    <h6 style="text-align:center;"> Notre équipe Volkswagen Professionels met tout en oeuvre pour être présents pendant tout le parcours d'achat et au delà, avec pour objectif de comprendre et répondre au mieux à vos besoins et pour mot d'ordre la satifaction complète de ses clients.</h6>
+
             {% for team in teams %}
 
     <div class="col-md-4">
-
     <div class="card h-100">
       <img src="{{team.thumbnail.url}}" class="card-img-top" alt="...">
       <div class="card-body">
