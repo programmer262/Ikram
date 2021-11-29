@@ -1,0 +1,50 @@
+{% extends 'index.html' %}{% block content %}{% load static %}
+
+<style>
+    #product {
+        border-bottom: solid black;
+        border-bottom-width: .5px;
+    }
+    #gallery{
+        text-decoration: none;
+text-align: center;    }
+    .gallery:hover{
+        color: #0d6efd;
+    }
+    .gallery{
+        text-decoration: none;
+        color: rgba(0,0,0,.55);
+    }
+    @media screen and (min-width:769px) {
+        #product-card {
+            height: 340.02px;
+        }
+    }
+    
+    @media screen and (max-width:991px) {
+        #product {
+            border-bottom: none;
+        }
+    }
+</style>
+
+
+
+
+            <div class="row">            {% for team in teams %}
+
+    <div class="col-md-4">
+
+    <div class="card h-100">
+      <img src="{{team.thumbnail.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{team.Nom}}</h5>
+        <small><p>{{team.Fonctionnement}}</p></small>
+      </div>
+
+    </div>
+  </div>
+{% endfor %}
+ 
+     </div>
+{% endblock %}

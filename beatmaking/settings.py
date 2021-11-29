@@ -31,14 +31,12 @@ ALLOWED_HOSTS = ['developers-united.herokuapp.com','127.0.0.1','localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chat',
     'Home',
     'django_summernote'
 ]

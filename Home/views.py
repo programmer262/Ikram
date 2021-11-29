@@ -14,7 +14,8 @@ def status(request):
     homes = home.objects.all()
     sliders = Slider.objects.all()
     services = Home_service.objects.all()
-    context = {'homes':homes,'sliders':sliders,'services':services}
+    teams = Notre_équipe.objects.all()
+    context = {'homes':homes,'sliders':sliders,'services':services,'teams':teams}
     return render(request,'home.html',context)
 def services(request):
     services = Service.objects.all()
@@ -23,19 +24,8 @@ def services(request):
 def serviceId(request, pk):
     service = Service.objects.get(id=pk)
     return render(request, 'Service detail.html', {'service':service})
-def products(request):
-    type = request.GET.get('type')
-    if type == None:
-        products = Product.objects.all()
-    else:
-        products = Product.objects.filter(type__name=type)
-    types = Type.objects.all()
-    context={'products':products,'types':types}
-    return render(request,'products.html',context)
 
-def productId(request, pk):
-    product = Product.objects.get(id=pk)
-    return render(request, 'detail.html', {'product':product})
+
 def contact(request):
 
     form = ContactForm()
@@ -49,12 +39,3 @@ def contact(request):
     context = {'form':form}
     return render(request, 'contact.html', context)
 
-@login_required
-def tasks(request):
-    tasks = Task.objects.all()
-    context = {'tasks':tasks}
-    return render(request,'task.html',context)
-@login_required
-def taskId(request, pk):
-    task = Task.objects.get(id=pk)
-    return render(request, 'taskd.html', {'task':task})

@@ -8,6 +8,7 @@
       body {
         position: relative;
         height: 100%;
+        margin-bottom:20px;
       }
 
       body {
@@ -66,15 +67,14 @@
     <div style="margin-bottom: 10px;" class="swiper mySwiper">
       <div class="swiper-wrapper">{% for slider in sliders %}
 
-        <div style="background-image: url({{slider.image.url}});filter: blur(100);background-position: center;
+        <div style="background-image: url({{slider.image.url}});background-position: center;
         background-repeat: no-repeat;" class="swiper-slide">
-            <div style="z-index:99" class="Text-of-slider">{{slider.name|safe}}<br>
-            {{slider.description|safe}}</div>
+
         </div>{% endfor %}
 
       </div>
-      <div style="color: rgb(255, 255, 255);" class="swiper-button-next"></div>
-      <div style="color: rgb(255, 255, 255);" class="swiper-button-prev"></div>
+      <div style="color: rgb(82, 80, 80);" class="swiper-button-next"></div>
+      <div style="color: rgb(82, 81, 81);" class="swiper-button-prev"></div>
     </div>
 
     <!-- Swiper JS -->
@@ -102,7 +102,10 @@
 
  {{home.mqs|safe}}
 
- {% endfor %}   <div class="container">   <div class="row">
+ {% endfor %}  
+ 
+ <div class="container">  
+   <center><h1 style="font-family: Play;">Our services</h1></center> <div class="row">
   {% for service in services %}
   <div style="margin-bottom: 3px;" class="col-md-4">
   
@@ -115,10 +118,28 @@
   
     <div class="card-body">
       <h5 class="card-title">{{service.Type}}</h5>
-     <a href="{% url 'service' service.id %}"> <button class="btn btn-primary">View details</button></a>
+     <a href="{% url 'service'%}"> <button class="btn btn-primary">View More</button></a>
     </div>
 
   </div></div>{% endfor %}
+ <center> <h1 style="font-family: Play;">
+    Our Team
+  </h1></center>
   
+  <div class="row">    
+            {% for team in teams %}
+
+    <div class="col-md-4">
+
+    <div class="card h-100">
+      <img src="{{team.thumbnail.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{team.Nom}}</h5>
+        <small><p>{{team.Fonctionnement}}</p></small>
+      </div>
+
+    </div>
+  </div>{%endfor%}
+  </div>
   </div></div> 
  {% endblock slider %}
